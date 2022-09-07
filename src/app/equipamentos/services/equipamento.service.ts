@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { Equipamento } from '../models/equipamento.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EquipamentoService {
   private registros: AngularFirestoreCollection<Equipamento>;
 
   constructor(private firestore: AngularFirestore) {
-    this.registros =
-      this.firestore.collection<Equipamento>("equipamentos");
+    this.registros = this.firestore.collection<Equipamento>('equipamentos');
   }
 
   public async inserir(registro: Equipamento): Promise<any> {
-    if (!registro)
-      return Promise.reject("Item inválido");
+    if (!registro) return Promise.reject('Item inválido');
 
     const res = await this.registros.add(registro);
 

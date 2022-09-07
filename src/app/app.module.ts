@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { RequisicaoComponent } from './requisicoes/requisicao.component';
 
 registerLocaleData(ptBr);
 
